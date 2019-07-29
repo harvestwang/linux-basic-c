@@ -32,8 +32,6 @@ int main(int argc, char *argv[]) {
         // td[i].message = "Hello World.\n";
         memcpy(&(td[i].message), test_str, sizeof(test_str));
 
-        // td[i].message = test_str;
-
         printf("%s", td[i].message);
         ret_thread[i] = pthread_create(&thread[i], NULL, (void *)print_message, (void *)&(td[i]));
 
