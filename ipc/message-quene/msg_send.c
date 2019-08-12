@@ -1,15 +1,15 @@
-#include "sys/types.h"
-#include "sys/ipc.h"
-#include "sys/msg.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "unistd.h"
-#include "string.h"
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/msg.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
 
 #define BUFFER_SIZE 512
 
 struct message {
-    long msg_type;
+    int msg_type;
     char msg_text[BUFFER_SIZE];
 };
 

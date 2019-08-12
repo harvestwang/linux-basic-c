@@ -1,8 +1,9 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "signal.h"
-#include "unistd.h"
-#include "sys/types.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include <signal.h>
+#include <sys/types.h>
 
 void MyFunc(int sigNo) {
     printf("if you want to quit, please try SIGQUIT.\n");
