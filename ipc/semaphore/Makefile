@@ -6,3 +6,6 @@ sem_fork.o: sem_fork.c sem_com.h
 
 sem_com.o: sem_com.c sem_com.h 
 	gcc -c sem_com.c
+
+clean:
+	rm -rf *.o sem_fork

@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "shm.h": "c",
+        "string.h": "c",
+        "sem_api.h": "c",
+        "types.h": "c",
+        "ipc.h": "c"
+    }
+}

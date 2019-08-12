@@ -1,5 +1,5 @@
-#include "unistd.h"
-#include "sys/shm.h"
+#include <unistd.h>
+#include <sys/shm.h>
 #include "sem_com.h"
 
 #define DELAY_TIME 3

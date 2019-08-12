@@ -1,16 +1,17 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "unistd.h"
-#include "string.h"
-#include "sys/types.h"
-#include "sys/ipc.h"
-#include "sys/shm.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/wait.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
 
 #define SHM_SIZE		256
 
 int main() {
 
-	key_t key;
+	// key_t key;
 	pid_t pid;
 
 	int shm_id;
@@ -34,7 +35,7 @@ int main() {
 		exit(-1);
 	}
 	else
-		printf("Create shared-memory: %d\n", shm_id);
+		printf("create shared-memory: %d\n", shm_id);
 
 	system("ipcs -m");
 
@@ -72,6 +73,8 @@ int main() {
 		if (ret == -1) {
 			perror("Child: shmdt");
 			exit(-1);
+		} else {
+			printf("Child: Deattach shared-memory.\n");
 		}
 
 		system("ipcs -m");
@@ -111,6 +114,8 @@ int main() {
 		if (ret == -1) {
 			perror("Parent: shmdt");
 			exit(-1);
+		} else {
+			printf("Parent: Deattach shared-memory.\n");
 		}
 
 		system("ipcs -m");

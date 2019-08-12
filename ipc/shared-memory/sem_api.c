@@ -22,7 +22,6 @@ int del_sem(int sem_id) {
 	int ret;
 	union semun sem_union;
 
-
 	ret = semctl(sem_id, 0, IPC_RMID, sem_union);
 	if (ret == -1) {
 		perror("Delete semaphore");
